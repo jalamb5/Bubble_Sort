@@ -1,14 +1,14 @@
 def bubble_sort(array)
-    moves = 0
+    moves = false # Tracking whether numbers have been moved during the loop
     for i in 0...array.length - 1 do
         if array[i] > array[i + 1]
-            moves += 1
+            moves = true
             a = array[i]
             array[i] = array[i + 1]
             array[i + 1] = a
         end
     end
-    unless moves == 0
+    unless moves == false # Continue to sort until no moves are made, i.e array is properly sorted
         bubble_sort(array)
     else
         p array
